@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome to my page!!</title>
+<link href="../static/css/test.css" th:href="@{/css/test.css}"
+	rel="stylesheet" />
+<style>
+* {
+	padding: 0;
+	margin: 100;
+}
+
+canvas {
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+	<!-- 	<h1>Welcome to my page!!</h1>
+
+<img th:src="@{/images/ahejiru.png}" alt="サンプル" width="300" height="300"></img>
+ -->
+ <script src="../static/js/test.js" th:src="@{/js/test.js}"></script>
+ 
+
+	<h2>Convenient Links</h2>
+	<a class="po" href="https://q.trap.jp" target="_blank">traQ</a>
+	<br>
+	<a class="po" href="https://tweetdeck.twitter.com" target="_blank">Tweetdeck</a>
+	<br>
+	<a class="po" href="https://www.pixiv.net" target="_blank">Pixiv</a>
+	<br>
+	<a class="po" href="https://q.trap.jp/channels/gps/times/Sigma1023"
+		target="_brank">Sigma1023</a>
+
+	<form action="#" th:action="@{/messages}" th:object="${messageForm}"
+		method="post">
+		<p>
+			Name (optional): <input type="text" th:field="*{name}" /> <em
+				th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+				Error</em>
+		</p>
+		<p>
+			<textarea cols="50" rows="2" placeholder="input" th:field="*{text}"></textarea>
+			<em th:if="${#fields.hasErrors('text')}" th:errors="*{text}">Text
+				Error</em>
+		</p>
+		<p>
+			<input type="submit" value="提出" />
+		</p>
+	</form>
+
+	<h2>Recent messages</h2>
+
+	<dl>
+		<th:block th:each="message : ${messages}">
+			<dt>
+				<span class="name" th:text="${message.name}"
+					th:attr="title=${message.remoteAddr}">John Doe</span> <small
+					th:text="${#dates.format(message.createdAt, '(yyyy-MM-dd HH:mm:ss)')}">(1970-01-01
+					00:00:00)</small>
+			</dt>
+			<dd class="text" th:text="${message.text}">Lorem ipsum dolor sit
+				amet</dd>
+		</th:block>
+	</dl>
+	<h3>Random Num</h3>
+	<p th:text="${test.random()}"></p>
+	<p th:text="${test.setData()}"></p>
+	<p th:text="${test.getData()}"></p>
+	<a class="pi"
+		href="https://qiita.com/ughirose/items/5d691adc677aa08636b8"
+		target="_blank">アノテーション</a>
+	<br>
+	<a class="pi"
+		href="http://javatechnology.net/spring/thymeleaf-java-logic/"
+		target="_blank">メソッド</a>
+	<br>
+	<a class="pi" href="https://developer.mozilla.org/ja/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript" target="_blank">JS＿Game</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.name {
+	color:blue;
+	
+	border-bottom-color: solid #000000;
+}
+.text{
+	color:red;
+	font-size: 200%;
+}
+.po{
+	color:blue;
+}
+.pi{
+	color:green;
+}
