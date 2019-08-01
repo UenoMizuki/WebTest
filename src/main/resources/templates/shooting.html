@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome to my page!!</title>
+<link href="../static/css/test.css" th:href="@{/css/test.css}"
+	rel="stylesheet" />
+<style>
+* {
+	padding: 0;
+	margin: 100;
+}
+
+canvas {
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<h1>Shooting</h1>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+	<!-- 	<h1>Welcome to my page!!</h1>
+
+<img th:src="@{/images/ahejiru.png}" alt="サンプル" width="300" height="300"></img>
+ -->
+ 
+ <script src="/js/testfunc.js" th:src="@{/js/testfunc.js}" type="module"></script>
+ <script src="/js/shooting.js" th:src="@{/js/shooting.js}" type="module"></script>
+ 
+</body>
+</html>
